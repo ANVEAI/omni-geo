@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OmniGEO Workspace – Enterprise Brand Monitoring</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body class="bg-[#070a12] text-slate-100 min-h-screen font-['Plus_Jakarta_Sans',sans-serif] antialiased selection:bg-indigo-500 selection:text-white">
+
+  <!-- Workspace Header -->
+  <header class="border-b border-slate-800 bg-[#0b101c]/90 backdrop-blur sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+      
+      <div class="flex items-center space-x-4">
+        <a href="/" class="flex items-center space-x-2.5">
+          <div class="w-8 h-8 rounded-xl bg-gradient-to-tr from-indigo-500 to-purple-600 flex items-center justify-center text-white">
+            <i class="fa-solid fa-brain text-sm"></i>
+          </div>
+          <span class="font-bold text-white text-base">Omni<span class="text-indigo-400">GEO</span></span>
+        </a>
+        <span class="text-slate-700">|</span>
+        <div class="flex items-center space-x-2 px-2.5 py-1 rounded-lg bg-slate-900 border border-slate-800 text-xs text-slate-300">
+          <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+          <span class="font-medium">Production Workspace</span>
+        </div>
+      </div>
+
+      <div class="flex items-center space-x-3 text-xs">
+        <a href="/tools/llms-txt-generator" class="px-3 py-1.5 rounded-lg border border-slate-800 bg-slate-900 hover:bg-slate-800 text-slate-300 transition">
+          <i class="fa-solid fa-file-code text-indigo-400 mr-1.5"></i> /llms.txt Builder
+        </a>
+        <a href="/tools/robots-txt-tester" class="px-3 py-1.5 rounded-lg border border-slate-800 bg-slate-900 hover:bg-slate-800 text-slate-300 transition">
+          <i class="fa-solid fa-robot text-purple-400 mr-1.5"></i> AI Bot Tester
+        </a>
+        <a href="/gtm-kit" class="px-3 py-1.5 rounded-lg border border-indigo-500/30 bg-indigo-500/10 hover:bg-indigo-500/20 text-indigo-300 font-semibold transition">
+          <i class="fa-solid fa-briefcase mr-1.5"></i> Agency Kit
+        </a>
+        <a href="/#scanner" class="px-3 py-1.5 rounded-lg bg-indigo-500 hover:bg-indigo-600 text-white font-bold transition flex items-center space-x-1 shadow-md shadow-indigo-500/20">
+          <i class="fa-solid fa-plus text-[10px]"></i>
+          <span>New Scan</span>
+        </a>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Workspace Main Content -->
+  <main class="max-w-7xl mx-auto px-6 py-10 space-y-8">
+    
+    <!-- Workspace Title & High-Level Telemetry -->
+    <div class="flex items-center justify-between flex-wrap gap-4">
+      <div>
+        <h1 class="text-2xl font-extrabold text-white tracking-tight">Active Brand Intelligence & Monitoring</h1>
+        <p class="text-xs text-slate-400 mt-1">Real-time status of tracked domains, multi-model consensus, and competitive displacement.</p>
+      </div>
+      <div class="flex items-center space-x-2 text-xs font-mono">
+        <span class="px-2.5 py-1 rounded-lg bg-[#0e1424] border border-slate-800 text-slate-400">
+          Sync Status: <strong class="text-emerald-400">Real-Time</strong>
+        </span>
+      </div>
+    </div>
+
+    <!-- 4 KPI Metrics Cards -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      
+      <div class="p-5 rounded-2xl bg-[#0d1322] border border-slate-800/80 shadow-xl space-y-2">
+        <div class="flex items-center justify-between text-xs text-slate-400">
+          <span class="font-mono uppercase tracking-wider">Total Audits</span>
+          <i class="fa-solid fa-list-check text-indigo-400"></i>
+        </div>
+        <div class="text-3xl font-black text-white font-mono">{{ total_audits_count }}</div>
+        <div class="text-[11px] text-slate-500 flex items-center space-x-1">
+          <span class="text-emerald-400">&uarr; Multi-model benchmarked</span>
+        </div>
+      </div>
+
+      <div class="p-5 rounded-2xl bg-[#0d1322] border border-slate-800/80 shadow-xl space-y-2">
+        <div class="flex items-center justify-between text-xs text-slate-400">
+          <span class="font-mono uppercase tracking-wider">Avg. GEO Score</span>
+          <i class="fa-solid fa-gauge-high text-emerald-400"></i>
+        </div>
+        <div class="text-3xl font-black text-emerald-400 font-mono">76<span class="text-sm text-slate-500 font-normal"> / 100</span></div>
+        <div class="text-[11px] text-slate-500 flex items-center space-x-1">
+          <span>Grade B (Moderate Resilience)</span>
+        </div>
+      </div>
+
+      <div class="p-5 rounded-2xl bg-[#0d1322] border border-slate-800/80 shadow-xl space-y-2">
+        <div class="flex items-center justify-between text-xs text-slate-400">
+          <span class="font-mono uppercase tracking-wider">AI Crawlers Allowed</span>
+          <i class="fa-solid fa-robot text-purple-400"></i>
+        </div>
+        <div class="text-3xl font-black text-purple-400 font-mono">100%</div>
+        <div class="text-[11px] text-slate-500">
+          <span>GPTBot, ClaudeBot, PerplexityBot</span>
+        </div>
+      </div>
+
+      <div class="p-5 rounded-2xl bg-[#0d1322] border border-slate-800/80 shadow-xl space-y-2">
+        <div class="flex items-center justify-between text-xs text-slate-400">
+          <span class="font-mono uppercase tracking-wider">Pipeline Protected</span>
+          <i class="fa-solid fa-shield-halved text-amber-400"></i>
+        </div>
+        <div class="text-3xl font-black text-white font-mono">$2.4M+</div>
+        <div class="text-[11px] text-slate-500">
+          <span>Across monitored accounts</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Audits & Monitored Domains Table -->
+    <div class="rounded-2xl bg-[#0d1322] border border-slate-800 shadow-2xl overflow-hidden">
+      
+      <div class="p-6 border-b border-slate-800 flex items-center justify-between flex-wrap gap-4">
+        <div>
+          <h2 class="text-base font-bold text-white">Monitored Domains & Audit Records</h2>
+          <p class="text-xs text-slate-400 mt-0.5">Click any record to inspect the complete multi-model breakdown and 30-day remediation roadmap.</p>
+        </div>
+        <a href="/#scanner" class="px-3.5 py-2 rounded-xl bg-indigo-500 hover:bg-indigo-600 text-white text-xs font-bold transition flex items-center space-x-1.5 shadow-md shadow-indigo-500/20">
+          <i class="fa-solid fa-plus text-[10px]"></i>
+          <span>Run New Audit</span>
+        </a>
+      </div>
+
+      <div class="overflow-x-auto">
+        <table class="w-full text-left text-xs">
+          <thead class="bg-[#090d16] border-b border-slate-800 text-[11px] font-mono uppercase tracking-wider text-slate-400">
+            <tr>
+              <th class="py-3.5 px-6">Brand & Domain</th>
+              <th class="py-3.5 px-6">Category / Niche</th>
+              <th class="py-3.5 px-6 text-center">GEO Score</th>
+              <th class="py-3.5 px-6 text-center">Grade</th>
+              <th class="py-3.5 px-6">Audit Date</th>
+              <th class="py-3.5 px-6 text-right">Actions</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-800/60 font-medium">
+            {% for a in recent_audits %}
+            <tr class="hover:bg-slate-800/30 transition group">
+              <td class="py-4 px-6">
+                <div class="flex items-center space-x-3">
+                  <div class="w-9 h-9 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center font-bold text-xs text-indigo-400 group-hover:border-indigo-500/40 transition">
+                    {{ a.brand_name[:2]|upper }}
+                  </div>
+                  <div>
+                    <span class="text-sm font-bold text-white block">{{ a.brand_name }}</span>
+                    <a href="{{ a.domain }}" target="_blank" class="text-[11px] text-slate-400 hover:text-indigo-400 transition font-mono">{{ a.domain }}</a>
+                  </div>
+                </div>
+              </td>
+              <td class="py-4 px-6 text-slate-300">
+                {{ a.niche }}
+              </td>
+              <td class="py-4 px-6 text-center">
+                <span class="text-sm font-black font-mono 
+                  {% if a.score >= 80 %}text-emerald-400{% elif a.score >= 60 %}text-blue-400{% else %}text-amber-400{% endif %}">
+                  {{ a.score }}
+                </span>
+                <span class="text-[10px] text-slate-500 font-mono"> / 100</span>
+              </td>
+              <td class="py-4 px-6 text-center">
+                <span class="px-2.5 py-1 rounded-md text-[11px] font-extrabold font-mono border
+                  {% if a.grade in ['A+', 'A'] %}bg-emerald-500/10 text-emerald-400 border-emerald-500/30
+                  {% elif a.grade == 'B' %}bg-blue-500/10 text-blue-400 border-blue-500/30
+                  {% elif a.grade == 'C' %}bg-amber-500/10 text-amber-400 border-amber-500/30
+                  {% else %}bg-red-500/10 text-red-400 border-red-500/30{% endif %}">
+                  Grade {{ a.grade }}
+                </span>
+              </td>
+              <td class="py-4 px-6 text-slate-400 font-mono text-[11px]">
+                {{ a.created_at[:10] }}
+              </td>
+              <td class="py-4 px-6 text-right">
+                <a href="/report/{{ a.id }}" class="inline-flex items-center space-x-1.5 px-3 py-1.5 rounded-lg bg-indigo-500/10 border border-indigo-500/30 text-indigo-300 hover:bg-indigo-500/20 font-semibold transition text-xs">
+                  <span>View Report</span>
+                  <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                </a>
+              </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+
+    <!-- AI Search Engine Intelligence Live Ticker -->
+    <div class="rounded-2xl bg-[#0b101c] border border-slate-800 p-6 shadow-xl">
+      <div class="flex items-center justify-between mb-4">
+        <h3 class="text-xs font-bold text-white uppercase tracking-wider flex items-center space-x-2">
+          <i class="fa-solid fa-rss text-indigo-400"></i>
+          <span>Live AI Engine Regulatory & Ingestion Alerts</span>
+        </h3>
+        <span class="text-[10px] font-mono text-emerald-400 bg-emerald-500/10 border border-emerald-500/30 px-2 py-0.5 rounded">All Systems Monitored</span>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
+        <div class="p-3.5 rounded-xl bg-[#070a12] border border-slate-800/80 space-y-1">
+          <span class="text-[10px] font-mono text-indigo-400 font-bold block">OpenAI SearchGPT Update</span>
+          <p class="text-slate-300 text-[11px] leading-relaxed">
+            Direct citation parsing confirmed prioritizing websites hosting clean <code class="text-indigo-300">/llms.txt</code> files over complex Single Page Apps.
+          </p>
+        </div>
+        <div class="p-3.5 rounded-xl bg-[#070a12] border border-slate-800/80 space-y-1">
+          <span class="text-[10px] font-mono text-purple-400 font-bold block">Perplexity Pro Tabular Ingestion</span>
+          <p class="text-slate-300 text-[11px] leading-relaxed">
+            Perplexity shopping and software comparison grids now extract semantic HTML <code class="text-purple-300">&lt;table&gt;</code> elements with 3.2x higher fidelity.
+          </p>
+        </div>
+        <div class="p-3.5 rounded-xl bg-[#070a12] border border-slate-800/80 space-y-1">
+          <span class="text-[10px] font-mono text-emerald-400 font-bold block">Google Gemini Entity Matching</span>
+          <p class="text-slate-300 text-[11px] leading-relaxed">
+            Google AI Overviews enforces Wikidata entity linkage (<code class="text-emerald-300">sameAs</code>) to prevent brand hallucination in comparative queries.
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+</body>
+</html>

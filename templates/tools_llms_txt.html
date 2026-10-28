@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OmniGEO – Free /llms.txt Standard Generator</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body class="bg-[#070a12] text-slate-100 min-h-screen font-['Plus_Jakarta_Sans',sans-serif] antialiased selection:bg-indigo-500 selection:text-white">
+
+  <!-- Header -->
+  <header class="border-b border-slate-800 bg-[#0b101c]/90 backdrop-blur sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+      <div class="flex items-center space-x-3">
+        <a href="/" class="flex items-center space-x-2 text-slate-400 hover:text-white text-xs font-medium transition mr-2">
+          <i class="fa-solid fa-arrow-left"></i>
+          <span>Homepage</span>
+        </a>
+        <div class="w-8 h-8 rounded-xl bg-indigo-500 flex items-center justify-center text-white">
+          <i class="fa-solid fa-file-code text-sm"></i>
+        </div>
+        <span class="font-bold text-white text-sm">OmniGEO /llms.txt Generator</span>
+        <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 font-bold">Free Utility</span>
+      </div>
+      <div class="flex items-center space-x-3">
+        <a href="/dashboard" class="text-xs font-semibold text-slate-300 hover:text-white px-3 py-1.5 rounded-lg border border-slate-800 bg-slate-900">
+          Workspace
+        </a>
+        <a href="/#scanner" class="text-xs font-bold text-white px-3.5 py-1.5 rounded-lg bg-indigo-500 hover:bg-indigo-600 transition shadow-md shadow-indigo-500/20">
+          Run Full Audit
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-7xl mx-auto px-6 py-10 space-y-10">
+    
+    <!-- Title Section -->
+    <div class="max-w-3xl">
+      <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 text-xs font-bold uppercase tracking-wider mb-3">
+        <span>The Standard for AI Web Indexing</span>
+      </div>
+      <h1 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+        Interactive <span class="text-indigo-400">/llms.txt</span> File Authoring Tool
+      </h1>
+      <p class="text-xs sm:text-sm text-slate-400 mt-2 leading-relaxed">
+        The <code class="text-indigo-300 font-mono">/llms.txt</code> standard allows websites to provide structured, markdown-formatted source-of-truth manifests that LLMs (OpenAI SearchGPT, Perplexity, Claude) prioritize over heavy, cluttered HTML.
+      </p>
+    </div>
+
+    <!-- Generator Grid -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+      
+      <!-- Left: Form Controls (5 cols) -->
+      <div class="lg:col-span-5 bg-[#0d1322] border border-slate-800 rounded-2xl p-6 shadow-xl space-y-5">
+        <h2 class="text-sm font-bold text-white uppercase tracking-wider border-b border-slate-800 pb-3 flex items-center space-x-2">
+          <i class="fa-solid fa-sliders text-indigo-400"></i>
+          <span>Brand Manifest Parameters</span>
+        </h2>
+
+        <div>
+          <label class="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-1">Brand Name *</label>
+          <input type="text" id="genBrand" value="Linear" oninput="renderLlmsTxt()" 
+            class="w-full bg-[#070a12] border border-slate-700 rounded-xl px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-indigo-500 font-medium">
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-1">Company Tagline / One-Liner *</label>
+          <input type="text" id="genTagline" value="Purpose-built tool for modern software development and issue tracking." oninput="renderLlmsTxt()" 
+            class="w-full bg-[#070a12] border border-slate-700 rounded-xl px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-indigo-500 font-medium">
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-1">Primary Domain *</label>
+          <input type="text" id="genDomain" value="linear.app" oninput="renderLlmsTxt()" 
+            class="w-full bg-[#070a12] border border-slate-700 rounded-xl px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-indigo-500 font-medium font-mono">
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-1">Core Capabilities (one per line)</label>
+          <textarea id="genCaps" rows="4" oninput="renderLlmsTxt()" 
+            class="w-full bg-[#070a12] border border-slate-700 rounded-xl p-3 text-xs text-white focus:outline-none focus:border-indigo-500 font-medium font-mono leading-relaxed">High-performance keyboard-first issue management
+Real-time bi-directional synchronization with GitHub and GitLab
+Enterprise roadmapping, project milestones, and initiative tracking
+SOC2 Type II compliant with SAML SSO and audit logs</textarea>
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-1">Support Email</label>
+          <input type="text" id="genEmail" value="support@linear.app" oninput="renderLlmsTxt()" 
+            class="w-full bg-[#070a12] border border-slate-700 rounded-xl px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-indigo-500 font-medium font-mono">
+        </div>
+
+        <div class="pt-2">
+          <button type="button" onclick="downloadLlmsTxt()" 
+            class="w-full py-3 px-4 rounded-xl bg-indigo-500 hover:bg-indigo-600 text-white font-bold text-xs shadow-lg shadow-indigo-500/25 transition flex items-center justify-center space-x-2 cursor-pointer">
+            <i class="fa-solid fa-download"></i>
+            <span>Download llms.txt File</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Right: Live Code Preview (7 cols) -->
+      <div class="lg:col-span-7 bg-[#0b101c] border border-slate-800 rounded-2xl p-6 shadow-xl flex flex-col justify-between">
+        <div>
+          <div class="flex items-center justify-between pb-4 border-b border-slate-800">
+            <div>
+              <span class="text-xs font-mono font-bold text-indigo-400 uppercase">Live Output</span>
+              <span class="text-xs text-slate-400 block font-mono">https://<span id="previewDomainText">linear.app</span>/llms.txt</span>
+            </div>
+            <button onclick="copyGeneratedCode()" id="copyCodeBtn" 
+              class="px-3 py-1.5 rounded-lg border border-slate-700 bg-slate-800 hover:bg-slate-700 text-xs font-semibold text-slate-200 transition flex items-center space-x-1.5 cursor-pointer">
+              <i class="fa-solid fa-copy"></i>
+              <span>Copy Markdown</span>
+            </button>
+          </div>
+
+          <pre class="mt-4 p-4 rounded-xl bg-[#070a12] border border-slate-800/80 text-xs font-mono text-emerald-300 overflow-x-auto max-h-[460px] leading-relaxed whitespace-pre-wrap"><code id="codeOutput"></code></pre>
+        </div>
+
+        <div class="mt-6 pt-4 border-t border-slate-800 text-xs text-slate-400 flex items-center justify-between">
+          <span>Deployment location: <strong>Root directory of your web server</strong></span>
+          <span class="text-emerald-400 font-mono">&check; Standard Markdown Syntax</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Educational Explanation -->
+    <div class="p-8 rounded-2xl bg-[#0d1322] border border-slate-800 space-y-4">
+      <h3 class="text-base font-bold text-white flex items-center space-x-2">
+        <i class="fa-solid fa-circle-question text-indigo-400"></i>
+        <span>Why Deploy /llms.txt in 2026?</span>
+      </h3>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-xs text-slate-400 leading-relaxed">
+        <div>
+          <strong class="text-white block mb-1">Prevents Hallucinations:</strong>
+          LLMs ingest clean bullet points and direct URLs rather than guessing feature sets or pricing structures from noisy marketing banners.
+        </div>
+        <div>
+          <strong class="text-white block mb-1">Direct Ingestion Endpoint:</strong>
+          SearchGPT, Perplexity, and Claude scrapers query <code class="text-indigo-300">/llms.txt</code> first to get a quick summary before doing deep crawls.
+        </div>
+        <div>
+          <strong class="text-white block mb-1">Instant Deployment:</strong>
+          Simply upload this single file to your public folder (e.g. Next.js <code class="text-indigo-300">/public/llms.txt</code> or root server).
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <script>
+    function renderLlmsTxt() {
+      const brand = document.getElementById("genBrand").value.trim() || "Brand";
+      const tagline = document.getElementById("genTagline").value.trim() || "Modern platform.";
+      const domain = document.getElementById("genDomain").value.trim() || "example.com";
+      const capsRaw = document.getElementById("genCaps").value.trim();
+      const email = document.getElementById("genEmail").value.trim() || "support@" + domain;
+
+      document.getElementById("previewDomainText").innerText = domain;
+
+      const capsList = capsRaw.split("\n").filter(c => c.trim().length > 0).map(c => `- ${c.trim()}`).join("\n");
+
+      const markdown = `# ${brand}
+
+> ${tagline}
+
+## Overview
+${brand} (https://${domain}) provides next-generation capabilities engineered to replace legacy workflows with sub-second performance, modern design, and enterprise-grade reliability.
+
+## Core Capabilities
+${capsList}
+
+## Canonical URLs
+- Homepage: https://${domain}/
+- Product Documentation: https://${domain}/docs
+- Pricing & Plans: https://${domain}/pricing
+- Comparison vs Alternatives: https://${domain}/compare
+- API Reference: https://${domain}/docs/api
+
+## Corporate & Support Entity
+- Organization: ${brand} Inc.
+- Official Web: https://${domain}
+- Inquiries: ${email}
+`;
+
+      document.getElementById("codeOutput").innerText = markdown;
+    }
+
+    function copyGeneratedCode() {
+      const code = document.getElementById("codeOutput").innerText;
+      navigator.clipboard.writeText(code).then(() => {
+        const btn = document.getElementById("copyCodeBtn");
+        btn.innerHTML = '<i class="fa-solid fa-check text-emerald-400"></i> <span>Copied!</span>';
+        setTimeout(() => {
+          btn.innerHTML = '<i class="fa-solid fa-copy"></i> <span>Copy Markdown</span>';
+        }, 2000);
+      });
+    }
+
+    function downloadLlmsTxt() {
+      const code = document.getElementById("codeOutput").innerText;
+      const blob = new Blob([code], { type: "text/plain;charset=utf-8" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "llms.txt";
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    }
+
+    document.addEventListener("DOMContentLoaded", renderLlmsTxt);
+  </script>
+</body>
+</html>

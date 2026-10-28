@@ -1,0 +1,91 @@
+/* OmniGEO Custom Styling & Print Optimization */
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0f172a;
+}
+::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #475569;
+}
+
+/* Print Styles for Executive PDF Generation */
+@media print {
+  @page {
+    size: letter;
+    margin: 15mm;
+  }
+
+  body {
+    background-color: #ffffff !important;
+    color: #0f172a !important;
+    font-size: 11pt !important;
+  }
+
+  /* Hide navigation, buttons, and decorative elements */
+  header, 
+  button, 
+  .print\:hidden,
+  #shareBtn {
+    display: none !important;
+  }
+
+  /* Force background colors and gradients in print */
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Container adjustments */
+  main {
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* Card styling for crisp print */
+  .bg-slate-900,
+  .bg-slate-900\/80,
+  .bg-slate-900\/90,
+  .bg-slate-950,
+  .bg-slate-950\/60,
+  .bg-slate-950\/40 {
+    background-color: #f8fafc !important;
+    border: 1px solid #cbd5e1 !important;
+    box-shadow: none !important;
+  }
+
+  /* Text contrast in print */
+  .text-white {
+    color: #0f172a !important;
+  }
+  .text-slate-300,
+  .text-slate-400 {
+    color: #334155 !important;
+  }
+  .text-slate-500 {
+    color: #64748b !important;
+  }
+
+  /* Page break rules */
+  h1, h2, h3, .score-card {
+    page-break-after: avoid;
+  }
+
+  .border-t {
+    page-break-inside: avoid;
+  }
+
+  pre, code {
+    background-color: #f1f5f9 !important;
+    color: #0f172a !important;
+    border: 1px solid #cbd5e1 !important;
+  }
+}

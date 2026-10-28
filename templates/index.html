@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OmniGEO™ – Enterprise Generative Engine Optimization & AI Search Intelligence</title>
+  <meta name="description" content="Audit, track, and optimize how your brand is recommended in ChatGPT Search, Perplexity AI, Google Gemini, and Anthropic Claude. Turn generative search into your #1 inbound pipeline.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body class="bg-[#070a12] text-slate-100 min-h-screen font-['Plus_Jakarta_Sans',sans-serif] antialiased selection:bg-indigo-500 selection:text-white">
+
+  <!-- Ambient Glow Backgrounds -->
+  <div class="fixed inset-0 pointer-events-none overflow-hidden z-0">
+    <div class="absolute -top-40 left-1/2 -translate-x-1/2 w-[1000px] h-[550px] bg-gradient-to-b from-indigo-600/15 via-purple-600/10 to-transparent blur-[120px] rounded-full"></div>
+    <div class="absolute top-[800px] -left-40 w-[600px] h-[600px] bg-emerald-600/10 blur-[140px] rounded-full"></div>
+    <div class="absolute top-[1800px] -right-40 w-[600px] h-[600px] bg-indigo-600/10 blur-[140px] rounded-full"></div>
+  </div>
+
+  <!-- Top Notification Bar -->
+  <aside class="relative z-50 bg-gradient-to-r from-indigo-950/80 via-slate-900 to-indigo-950/80 border-b border-indigo-500/20 text-xs py-2 px-4 text-center text-slate-300">
+    <div class="max-w-7xl mx-auto flex items-center justify-center space-x-2">
+      <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold bg-indigo-500/20 text-indigo-300 border border-indigo-500/30 uppercase tracking-wider font-mono">2026 Shift</span>
+      <span>Over 65% of B2B evaluations now originate inside LLM chat interfaces.</span>
+      <a href="#scanner" class="underline text-indigo-400 hover:text-indigo-300 font-semibold ml-1">Test your brand &rarr;</a>
+    </div>
+  </aside>
+
+  <!-- Navigation Bar -->
+  <header class="sticky top-0 z-40 bg-[#070a12]/80 backdrop-blur-xl border-b border-slate-800/80">
+    <nav class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between" aria-label="Main Navigation">
+      
+      <!-- Brand Logo -->
+      <a href="/" class="flex items-center space-x-3 group">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-500 via-purple-500 to-pink-500 p-[1px] shadow-lg shadow-indigo-500/20 group-hover:scale-105 transition-transform duration-200">
+          <div class="w-full h-full bg-[#0b0f19] rounded-[11px] flex items-center justify-center">
+            <i class="fa-solid fa-brain text-indigo-400 text-lg"></i>
+          </div>
+        </div>
+        <div>
+          <div class="flex items-center space-x-1.5">
+            <span class="font-extrabold tracking-tight text-xl text-white">Omni<span class="text-indigo-400">GEO</span></span>
+            <span class="text-[10px] font-bold px-1.5 py-0.2 rounded bg-indigo-500/15 text-indigo-300 border border-indigo-500/30 font-mono">v2.5</span>
+          </div>
+          <span class="text-[10px] text-slate-400 tracking-wider uppercase block font-semibold">Generative Engine Optimization</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <div class="hidden lg:flex items-center space-x-8 text-xs font-semibold text-slate-300">
+        <a href="#scanner" class="hover:text-white transition flex items-center space-x-1">
+          <span>AI Scanner</span>
+        </a>
+        <a href="#simulator" class="hover:text-white transition">LLM Consensus</a>
+        <a href="#roi-calculator" class="hover:text-white transition">Pipeline Calculator</a>
+        <div class="relative group">
+          <button class="hover:text-white transition flex items-center space-x-1 cursor-pointer">
+            <span>Free Tools</span>
+            <i class="fa-solid fa-chevron-down text-[9px] text-slate-500 group-hover:rotate-180 transition-transform"></i>
+          </button>
+          <div class="absolute top-full left-0 mt-2 w-56 rounded-xl bg-[#0e1424] border border-slate-800 shadow-2xl p-2 hidden group-hover:block transition-all">
+            <a href="/tools/llms-txt-generator" class="block p-2.5 rounded-lg hover:bg-slate-800/80 transition">
+              <span class="font-bold text-white text-xs block">/llms.txt Generator</span>
+              <span class="text-[10px] text-slate-400 block mt-0.5">Author markdown AI manifests</span>
+            </a>
+            <a href="/tools/robots-txt-tester" class="block p-2.5 rounded-lg hover:bg-slate-800/80 transition">
+              <span class="font-bold text-white text-xs block">AI Bot Validator</span>
+              <span class="text-[10px] text-slate-400 block mt-0.5">Check GPTBot & ClaudeBot status</span>
+            </a>
+          </div>
+        </div>
+        <a href="/pricing" class="hover:text-white transition">Pricing</a>
+        <a href="/gtm-kit" class="hover:text-indigo-300 text-indigo-400 flex items-center space-x-1">
+          <i class="fa-solid fa-briefcase text-[11px]"></i>
+          <span>Agency Sales Kit</span>
+        </a>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="flex items-center space-x-3">
+        <a href="/dashboard" class="text-xs font-semibold text-slate-300 hover:text-white px-3.5 py-2 rounded-xl border border-slate-800 bg-[#0e1424] hover:bg-slate-800 transition">
+          Workspace
+        </a>
+        <a href="#scanner" class="text-xs font-bold text-white px-4 py-2.5 rounded-xl bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-400 hover:to-purple-500 transition shadow-lg shadow-indigo-500/25 flex items-center space-x-1.5">
+          <i class="fa-solid fa-bolt text-amber-300 text-[11px]"></i>
+          <span>Run Free Scan</span>
+        </a>
+      </div>
+
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="relative z-10 pt-16 pb-20 px-6 max-w-7xl mx-auto text-center">
+    
+    <!-- Status Chip -->
+    <div class="inline-flex items-center space-x-2.5 px-3.5 py-1.5 rounded-full bg-slate-900/90 border border-indigo-500/30 text-indigo-300 text-xs font-semibold mb-8 shadow-xl backdrop-blur">
+      <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+      <span>Autonomous AI Search Intelligence Suite</span>
+      <span class="text-slate-600">|</span>
+      <span class="text-slate-400 text-[11px]">ChatGPT &bull; Perplexity &bull; Gemini &bull; Claude</span>
+    </div>
+
+    <!-- Main Headline -->
+    <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white tracking-tight leading-[1.08] max-w-5xl mx-auto">
+      When Buyers Ask AI for Recommendations, <br class="hidden sm:block">
+      <span class="bg-gradient-to-r from-indigo-400 via-purple-300 to-emerald-400 bg-clip-text text-transparent">Does Your Brand Win or Disappear?</span>
+    </h1>
+
+    <p class="mt-6 text-base sm:text-lg md:text-xl text-slate-400 max-w-3xl mx-auto leading-relaxed font-normal">
+      Traditional SEO is dead. Enterprise buyers evaluate vendors inside conversational models. OmniGEO audits your technical AI bot crawlability, <code class="text-indigo-300 font-mono text-sm px-1.5 py-0.5 rounded bg-indigo-500/10 border border-indigo-500/20">/llms.txt</code> compliance, and prompt recommendation share in seconds.
+    </p>
+
+    <!-- Key Metrics Ribbon -->
+    <div class="mt-10 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto text-left">
+      <div class="p-4 rounded-2xl bg-[#0b101c]/80 border border-slate-800/80 backdrop-blur">
+        <span class="text-[11px] font-mono text-slate-400 uppercase tracking-wider block">Displacement Risk</span>
+        <span class="text-2xl font-black text-red-400 font-mono mt-1 block">65%+</span>
+        <span class="text-[10px] text-slate-500 block mt-0.5">Prompt leakage to competitors</span>
+      </div>
+      <div class="p-4 rounded-2xl bg-[#0b101c]/80 border border-slate-800/80 backdrop-blur">
+        <span class="text-[11px] font-mono text-slate-400 uppercase tracking-wider block">Citation Nodes</span>
+        <span class="text-2xl font-black text-indigo-400 font-mono mt-1 block">4 Critical</span>
+        <span class="text-[10px] text-slate-500 block mt-0.5">Reddit, G2, Wikidata, llms.txt</span>
+      </div>
+      <div class="p-4 rounded-2xl bg-[#0b101c]/80 border border-slate-800/80 backdrop-blur">
+        <span class="text-[11px] font-mono text-slate-400 uppercase tracking-wider block">Model Coverage</span>
+        <span class="text-2xl font-black text-purple-400 font-mono mt-1 block">4 Major</span>
+        <span class="text-[10px] text-slate-500 block mt-0.5">OpenAI, Perplexity, Gemini, Claude</span>
+      </div>
+      <div class="p-4 rounded-2xl bg-[#0b101c]/80 border border-slate-800/80 backdrop-blur">
+        <span class="text-[11px] font-mono text-slate-400 uppercase tracking-wider block">Time to First Audit</span>
+        <span class="text-2xl font-black text-emerald-400 font-mono mt-1 block">&lt; 15 Secs</span>
+        <span class="text-[10px] text-slate-500 block mt-0.5">Live zero-friction scan</span>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- Interactive Live Scanner Section (Signature Element) -->
+  <section id="scanner" class="relative z-20 max-w-6xl mx-auto px-6 pb-24">
+    <div class="rounded-3xl bg-[#0d1322] border border-indigo-500/30 p-6 md:p-10 shadow-2xl shadow-indigo-950/50 relative overflow-hidden">
+      
+      <!-- Top HUD Header -->
+      <div class="flex items-center justify-between pb-6 border-b border-slate-800 flex-wrap gap-4">
+        <div>
+          <div class="flex items-center space-x-2">
+            <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping"></span>
+            <h2 class="text-lg md:text-xl font-bold text-white tracking-tight">Live Generative Engine Audit Terminal</h2>
+          </div>
+          <p class="text-xs text-slate-400 mt-1">Live crawl: tests robots.txt permissions, /llms.txt, Schema.org entities, and simulated multi-model prompts.</p>
+        </div>
+        
+        <!-- Preset Demos -->
+        <div class="flex items-center space-x-2 text-xs">
+          <span class="text-slate-500 font-mono text-[11px]">Instant Pre-fills:</span>
+          <button type="button" onclick="loadSampleForm('supabase')" class="px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-indigo-300 font-medium border border-slate-700 transition cursor-pointer">
+            Supabase vs Firebase
+          </button>
+          <button type="button" onclick="loadSampleForm('linear')" class="px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-indigo-300 font-medium border border-slate-700 transition cursor-pointer">
+            Linear vs Jira
+          </button>
+        </div>
+      </div>
+
+      <!-- Main Audit Input Form -->
+      <form id="auditForm" class="mt-8 space-y-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+          <div>
+            <label class="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-2">Target Brand Name *</label>
+            <div class="relative">
+              <span class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-500">
+                <i class="fa-solid fa-building text-xs"></i>
+              </span>
+              <input type="text" id="brand_name" required placeholder="e.g. Supabase, Linear, Stripe" 
+                class="w-full bg-[#070a12] border border-slate-700/80 rounded-xl pl-9 pr-4 py-3 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition font-medium">
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-2">Target Domain / URL *</label>
+            <div class="relative">
+              <span class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-500">
+                <i class="fa-solid fa-globe text-xs"></i>
+              </span>
+              <input type="text" id="domain" required placeholder="https://supabase.com" 
+                class="w-full bg-[#070a12] border border-slate-700/80 rounded-xl pl-9 pr-4 py-3 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition font-medium">
+            </div>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+          <div>
+            <label class="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-2">Commercial Niche / Category *</label>
+            <div class="relative">
+              <span class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-500">
+                <i class="fa-solid fa-tag text-xs"></i>
+              </span>
+              <input type="text" id="niche" required placeholder="Backend as a Service & PostgreSQL Cloud" 
+                class="w-full bg-[#070a12] border border-slate-700/80 rounded-xl pl-9 pr-4 py-3 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition font-medium">
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-2">Key Competitors (comma separated) *</label>
+            <div class="relative">
+              <span class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-500">
+                <i class="fa-solid fa-users-viewfinder text-xs"></i>
+              </span>
+              <input type="text" id="competitors" required placeholder="Firebase, AWS Amplify, Appwrite" 
+                class="w-full bg-[#070a12] border border-slate-700/80 rounded-xl pl-9 pr-4 py-3 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition font-medium">
+            </div>
+          </div>
+        </div>
+
+        <!-- Optional Custom Buying Prompts Dropdown -->
+        <div class="border border-slate-800 rounded-xl p-4 bg-[#070a12]/50">
+          <button type="button" onclick="toggleCustomQueries()" class="w-full flex items-center justify-between text-xs text-slate-400 hover:text-slate-200">
+            <span class="flex items-center space-x-2 font-semibold">
+              <i class="fa-solid fa-sliders text-indigo-400"></i>
+              <span>Customize Commercial Decision Prompts (Optional)</span>
+            </span>
+            <i id="queriesChevron" class="fa-solid fa-chevron-down text-xs transition-transform"></i>
+          </button>
+          <div id="customQueriesContainer" class="hidden mt-3 pt-3 border-t border-slate-800/80 space-y-2">
+            <textarea id="custom_queries" rows="3" placeholder="Enter custom prompt per line (e.g. Which platform has lower latency: Brand vs Competitor?)" 
+              class="w-full bg-[#0b101c] border border-slate-700 rounded-lg p-3 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-indigo-500"></textarea>
+            <p class="text-[11px] text-slate-500">If left blank, OmniGEO will automatically synthesize 5 high-intent commercial prompts tested across ChatGPT, Perplexity, Gemini, and Claude.</p>
+          </div>
+        </div>
+
+        <!-- Action Button -->
+        <button type="submit" id="submitBtn" 
+          class="w-full py-4 px-6 rounded-xl font-bold text-base bg-gradient-to-r from-indigo-500 via-purple-600 to-indigo-600 hover:from-indigo-400 hover:to-purple-500 text-white shadow-xl shadow-indigo-500/25 transition duration-200 flex items-center justify-center space-x-3 cursor-pointer group">
+          <i class="fa-solid fa-bolt text-amber-300 group-hover:scale-125 transition-transform"></i>
+          <span>Execute Comprehensive GEO Audit</span>
+          <span class="text-xs bg-black/30 px-2 py-0.5 rounded font-mono font-normal">Free Instant Report</span>
+        </button>
+      </form>
+
+      <!-- Animated Live Execution Overlay -->
+      <div id="loadingOverlay" class="hidden absolute inset-0 bg-[#070a12]/95 backdrop-blur-md z-30 flex flex-col items-center justify-center p-8 text-center">
+        <div class="w-16 h-16 rounded-2xl bg-indigo-500/15 border border-indigo-500/40 flex items-center justify-center mb-6 relative">
+          <i class="fa-solid fa-microchip text-indigo-400 text-2xl animate-spin"></i>
+        </div>
+        <h3 id="loadingStepTitle" class="text-xl font-extrabold text-white mb-2">Connecting to Live Domain...</h3>
+        <p id="loadingStepDesc" class="text-xs text-slate-400 max-w-md mb-8">Inspecting robots.txt directives and verifying AI crawler permissions...</p>
+        
+        <div class="w-full max-w-sm space-y-3 text-left">
+          <div id="step1" class="flex items-center text-xs text-indigo-400 font-semibold p-2.5 rounded-lg bg-slate-900/60 border border-slate-800">
+            <i class="fa-solid fa-circle-notch fa-spin mr-3 text-indigo-400"></i> Scanning robots.txt for GPTBot & ClaudeBot
+          </div>
+          <div id="step2" class="flex items-center text-xs text-slate-500 font-medium p-2.5 rounded-lg bg-slate-900/30">
+            <i class="fa-solid fa-circle mr-3 text-[8px]"></i> Validating /llms.txt & JSON-LD Entity Graph
+          </div>
+          <div id="step3" class="flex items-center text-xs text-slate-500 font-medium p-2.5 rounded-lg bg-slate-900/30">
+            <i class="fa-solid fa-circle mr-3 text-[8px]"></i> Testing Prompts in SearchGPT, Perplexity & Gemini
+          </div>
+          <div id="step4" class="flex items-center text-xs text-slate-500 font-medium p-2.5 rounded-lg bg-slate-900/30">
+            <i class="fa-solid fa-circle mr-3 text-[8px]"></i> Computing Competitor Share of Voice & 30-Day Plan
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Interactive LLM Consensus Comparison Section -->
+  <section id="simulator" class="relative z-10 py-20 px-6 max-w-7xl mx-auto border-t border-slate-800/80">
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <span class="text-xs font-mono font-bold uppercase tracking-wider text-indigo-400 bg-indigo-500/10 px-3 py-1 rounded-full border border-indigo-500/20">The New Reality</span>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mt-4">
+        Traditional Google vs. Modern AI Search Consensus
+      </h2>
+      <p class="text-sm text-slate-400 mt-3">
+        In 2026, buyers don't scroll through 10 sponsored links. They ask complex prompt comparisons. Here is how recommendation consensus forms:
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+      
+      <!-- Card 1: Traditional Search -->
+      <div class="p-6 rounded-2xl bg-[#0b101c] border border-slate-800 relative opacity-70 hover:opacity-100 transition">
+        <div class="flex items-center justify-between mb-4">
+          <span class="text-xs font-bold text-slate-400 uppercase tracking-wider font-mono">Legacy Web (2015-2023)</span>
+          <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-red-500/10 text-red-400 border border-red-500/20">Declining CTR</span>
+        </div>
+        <h3 class="text-base font-bold text-white mb-2">Google 10 Blue Links</h3>
+        <p class="text-xs text-slate-400 mb-4 leading-relaxed">
+          High bounce rates, ad congestion, and SEO spam force buyers into zero-click frustration.
+        </p>
+        <div class="space-y-2 text-[11px] font-mono text-slate-500 bg-[#070a12] p-3 rounded-xl border border-slate-800/80">
+          <div class="text-slate-400">Sponsored Ad &bull; Competitor Incumbent</div>
+          <div class="text-slate-400">Sponsored Ad &bull; Review Broker Affiliate</div>
+          <div class="text-slate-600">Organic Link #1 &bull; 4,000-word SEO fluff</div>
+        </div>
+      </div>
+
+      <!-- Card 2: OpenAI SearchGPT / ChatGPT -->
+      <div class="p-6 rounded-2xl bg-[#0d1322] border border-indigo-500/30 relative shadow-xl">
+        <div class="flex items-center justify-between mb-4">
+          <span class="text-xs font-bold text-indigo-300 uppercase tracking-wider font-mono">Conversational Search</span>
+          <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">Synthesized Answer</span>
+        </div>
+        <h3 class="text-base font-bold text-white mb-2">ChatGPT Search & Bing Graph</h3>
+        <p class="text-xs text-slate-400 mb-4 leading-relaxed">
+          Generates a single authoritative summary citing 2-3 brands with direct Reddit & documentation anchors.
+        </p>
+        <div class="space-y-2 text-[11px] font-mono text-slate-300 bg-[#070a12] p-3.5 rounded-xl border border-indigo-500/20">
+          <div class="text-emerald-400 font-bold">&check; "For modern teams, [Brand A] is recommended..."</div>
+          <div class="text-slate-400">&bull; Source [1]: Reddit community consensus</div>
+          <div class="text-slate-400">&bull; Source [2]: Verified technical docs</div>
+        </div>
+      </div>
+
+      <!-- Card 3: Perplexity Pro -->
+      <div class="p-6 rounded-2xl bg-[#0b101c] border border-purple-500/30 relative shadow-xl">
+        <div class="flex items-center justify-between mb-4">
+          <span class="text-xs font-bold text-purple-300 uppercase tracking-wider font-mono">Real-Time Research</span>
+          <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-purple-500/10 text-purple-400 border border-purple-500/20">Live Citation Matrix</span>
+        </div>
+        <h3 class="text-base font-bold text-white mb-2">Perplexity Pro Citation Engine</h3>
+        <p class="text-xs text-slate-400 mb-4 leading-relaxed">
+          Extracts tabular pros & cons directly from G2 verified reviews, GitHub repos, and unblocked AI bots.
+        </p>
+        <div class="space-y-2 text-[11px] font-mono text-slate-300 bg-[#070a12] p-3.5 rounded-xl border border-purple-500/20">
+          <div class="text-purple-400 font-bold">&check; Comparative Feature Table Generated</div>
+          <div class="text-slate-400">&bull; Citation [1]: G2 2026 Grid Leader</div>
+          <div class="text-slate-400">&bull; Citation [2]: /llms.txt manifest endpoints</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Interactive ROI & Pipeline-at-Risk Calculator Section -->
+  <section id="roi-calculator" class="relative z-10 py-20 px-6 max-w-6xl mx-auto border-t border-slate-800/80">
+    <div class="rounded-3xl bg-gradient-to-r from-red-950/30 via-[#0d1322] to-[#0d1322] border border-red-500/30 p-8 md:p-12 shadow-2xl">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        
+        <!-- Left: Sliders -->
+        <div class="lg:col-span-7 space-y-6">
+          <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-red-500/10 border border-red-500/20 text-red-400 text-xs font-bold uppercase tracking-wider">
+            <i class="fa-solid fa-calculator"></i>
+            <span>Financial Risk Modeler</span>
+          </div>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+            Calculate How Much Pipeline Competitors Are Diverting From You
+          </h2>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Move the sliders to model your commercial category dynamics and quantify the annual revenue currently lost to LLM recommendation blindspots.
+          </p>
+
+          <!-- Slider 1: Deal ACV -->
+          <div class="space-y-2">
+            <div class="flex justify-between text-xs font-semibold">
+              <span class="text-slate-300">Average Annual Contract Value (ACV)</span>
+              <span id="acvLabel" class="text-indigo-400 font-mono font-bold">$12,000</span>
+            </div>
+            <input type="range" id="acvSlider" min="1000" max="60000" step="1000" value="12000" 
+              class="w-full accent-indigo-500 h-1.5 bg-slate-800 rounded-lg cursor-pointer" oninput="updateRoiCalc()">
+          </div>
+
+          <!-- Slider 2: Monthly Category Prompts -->
+          <div class="space-y-2">
+            <div class="flex justify-between text-xs font-semibold">
+              <span class="text-slate-300">Estimated Monthly Category AI Searches</span>
+              <span id="promptsLabel" class="text-indigo-400 font-mono font-bold">4,500</span>
+            </div>
+            <input type="range" id="promptsSlider" min="500" max="25000" step="500" value="4500" 
+              class="w-full accent-indigo-500 h-1.5 bg-slate-800 rounded-lg cursor-pointer" oninput="updateRoiCalc()">
+          </div>
+
+          <!-- Slider 3: Competitor Displacement Rate -->
+          <div class="space-y-2">
+            <div class="flex justify-between text-xs font-semibold">
+              <span class="text-slate-300">Competitor AI Displacement Rate</span>
+              <span id="leakageLabel" class="text-red-400 font-mono font-bold">60%</span>
+            </div>
+            <input type="range" id="leakageSlider" min="10" max="95" step="5" value="60" 
+              class="w-full accent-red-500 h-1.5 bg-slate-800 rounded-lg cursor-pointer" oninput="updateRoiCalc()">
+          </div>
+        </div>
+
+        <!-- Right: Readout Card -->
+        <div class="lg:col-span-5 bg-[#070a12]/90 border border-slate-800 p-8 rounded-2xl text-center space-y-4">
+          <span class="text-xs font-mono uppercase tracking-wider text-slate-400 block font-semibold">Estimated Annual Pipeline Diverted</span>
+          <div id="pipelineRiskDisplay" class="text-4xl sm:text-5xl font-black text-red-400 font-mono tracking-tight">$1,166,400</div>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Represents approximately <strong id="lostLeadsDisplay" class="text-white font-mono">97</strong> qualified buyers every month introduced to your competitors before reaching your site.
+          </p>
+          <div class="pt-2">
+            <a href="#scanner" class="inline-flex items-center justify-center w-full py-3 px-4 rounded-xl text-xs font-bold bg-indigo-500 hover:bg-indigo-600 text-white shadow-lg shadow-indigo-500/25 transition">
+              Close Your AI Pipeline Leak &rarr;
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- The 4 Pillars Feature Architecture -->
+  <section class="relative z-10 py-20 px-6 max-w-7xl mx-auto border-t border-slate-800/80">
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <span class="text-xs font-mono font-bold uppercase tracking-wider text-emerald-400 bg-emerald-500/10 px-3 py-1 rounded-full border border-emerald-500/20">The Protocol</span>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mt-4">
+        Engineered for the 4 Ingestion Vectors of Modern LLMs
+      </h2>
+      <p class="text-sm text-slate-400 mt-3">
+        How OmniGEO systematically engineers deterministic citation inclusion:
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      
+      <div class="p-6 rounded-2xl bg-[#0b101c] border border-slate-800 space-y-3 hover:border-indigo-500/40 transition">
+        <div class="w-10 h-10 rounded-xl bg-indigo-500/10 border border-indigo-500/30 flex items-center justify-center text-indigo-400 font-bold">
+          01
+        </div>
+        <h3 class="text-base font-bold text-white">Bot Whitelisting & Crawlability</h3>
+        <p class="text-xs text-slate-400 leading-relaxed">
+          Configures <code class="text-indigo-300">robots.txt</code> and edge server headers to explicitly permit GPTBot, ClaudeBot, and PerplexityBot without exposing sensitive internal endpoints.
+        </p>
+      </div>
+
+      <div class="p-6 rounded-2xl bg-[#0b101c] border border-slate-800 space-y-3 hover:border-indigo-500/40 transition">
+        <div class="w-10 h-10 rounded-xl bg-purple-500/10 border border-purple-500/30 flex items-center justify-center text-purple-400 font-bold">
+          02
+        </div>
+        <h3 class="text-base font-bold text-white">/llms.txt Architecture</h3>
+        <p class="text-xs text-slate-400 leading-relaxed">
+          Authors and hosts the emerging markdown standard (<code class="text-purple-300">/llms.txt</code>) giving AI agents a hallucination-free manifest of your capabilities, pricing, and API docs.
+        </p>
+      </div>
+
+      <div class="p-6 rounded-2xl bg-[#0b101c] border border-slate-800 space-y-3 hover:border-indigo-500/40 transition">
+        <div class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 font-bold">
+          03
+        </div>
+        <h3 class="text-base font-bold text-white">Knowledge Graph Entities</h3>
+        <p class="text-xs text-slate-400 leading-relaxed">
+          Wires JSON-LD Organization schema with <code class="text-emerald-300">sameAs</code> entity links to Wikidata and Crunchbase to resolve brand identity ambiguity in Gemini and Claude.
+        </p>
+      </div>
+
+      <div class="p-6 rounded-2xl bg-[#0b101c] border border-slate-800 space-y-3 hover:border-indigo-500/40 transition">
+        <div class="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 font-bold">
+          04
+        </div>
+        <h3 class="text-base font-bold text-white">High-Signal Community Citations</h3>
+        <p class="text-xs text-slate-400 leading-relaxed">
+          Seeds authentic engineering discussions in Reddit and review platforms (G2) where Google and OpenAI license live data for real-time recommendation synthesis.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Pricing Preview Section -->
+  <section class="relative z-10 py-20 px-6 max-w-7xl mx-auto border-t border-slate-800/80">
+    <div class="text-center max-w-2xl mx-auto mb-16">
+      <span class="text-xs font-mono font-bold uppercase tracking-wider text-indigo-400 bg-indigo-500/10 px-3 py-1 rounded-full border border-indigo-500/20">Simple Pricing</span>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mt-4">
+        Zero Investment to Start, High-ROI to Scale
+      </h2>
+      <p class="text-sm text-slate-400 mt-3">
+        From free one-click instant scanning to enterprise automated daily drift monitoring.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+      
+      <!-- Free Plan -->
+      <div class="p-8 rounded-3xl bg-[#0b101c] border border-slate-800 space-y-6">
+        <div>
+          <span class="text-xs font-bold text-slate-400 uppercase tracking-wider font-mono">Starter</span>
+          <div class="flex items-baseline space-x-1 my-2">
+            <span class="text-4xl font-black text-white">$0</span>
+            <span class="text-xs text-slate-500">/ forever</span>
+          </div>
+          <p class="text-xs text-slate-400">Essential health check for early stage founders.</p>
+        </div>
+        <ul class="space-y-3 text-xs text-slate-300">
+          <li class="flex items-center space-x-2"><i class="fa-solid fa-check text-emerald-400 text-xs"></i> <span>Instant live GEO audit</span></li>
+          <li class="flex items-center space-x-2"><i class="fa-solid fa-check text-emerald-400 text-xs"></i> <span>robots.txt AI bot check</span></li>
+          <li class="flex items-center space-x-2"><i class="fa-solid fa-check text-emerald-400 text-xs"></i> <span>llms.txt generator tool</span></li>
+          <li class="flex items-center space-x-2"><i class="fa-solid fa-check text-emerald-400 text-xs"></i> <span>Share of Voice estimate</span></li>
+        </ul>
+        <a href="#scanner" class="block w-full py-3 rounded-xl border border-slate-700 bg-slate-800 hover:bg-slate-700 text-center text-xs font-bold text-white transition">
+          Run Free Audit
+        </a>
+      </div>
+
+      <!-- Growth SaaS Plan -->
+      <div class="p-8 rounded-3xl bg-[#0d1322] border-2 border-indigo-500 space-y-6 relative shadow-2xl shadow-indigo-950/80">
+        <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full bg-gradient-to-r from-indigo-500 to-purple-600 text-white text-[10px] font-bold uppercase tracking-wider font-mono">
+          Most Popular
+        </div>
+        <div>
+          <span class="text-xs font-bold text-indigo-400 uppercase tracking-wider font-mono">Growth SaaS</span>
+          <div class="flex items-baseline space-x-1 my-2">
+            <span class="text-4xl font-black text-white">$199</span>
+            <span class="text-xs text-slate-500">/ month</span>
+          </div>
+          <p class="text-xs text-slate-400">Automated daily monitoring for scaling marketing teams.</p>
+        </div>
+        <ul class="space-y-3 text-xs text-slate-300">
+          <li class="flex items-center space-x-2"><i class="fa-solid fa-check text-indigo-400 text-xs"></i> <span>Track up to 5 domains</span></li>
+          <li class="flex items-center space-x-2"><i class="fa-solid fa-check text-indigo-400 text-xs"></i> <span>Daily multi-model re-testing</span></li>
+          <li class="flex items-center space-x-2"><i class="fa-solid fa-check text-indigo-400 text-xs"></i> <span>Automated citation drift alerts</span></li>
+          <li class="flex items-center space-x-2"><i class="fa-solid fa-check text-indigo-400 text-xs"></i> <span>Hosted /llms.txt CDN sync</span></li>
+          <li class="flex items-center space-x-2"><i class="fa-solid fa-check text-indigo-400 text-xs"></i> <span>Exportable PDF Executive Reports</span></li>
+        </ul>
+        <a href="/pricing" class="block w-full py-3 rounded-xl bg-indigo-500 hover:bg-indigo-600 text-center text-xs font-bold text-white transition shadow-lg shadow-indigo-500/25">
+          Start 14-Day Trial
+        </a>
+      </div>
+
+      <!-- Enterprise / Agency Plan -->
+      <div class="p-8 rounded-3xl bg-[#0b101c] border border-slate-800 space-y-6">
+        <div>
+          <span class="text-xs font-bold text-purple-400 uppercase tracking-wider font-mono">Agency & DFY</span>
+          <div class="flex items-baseline space-x-1 my-2">
+            <span class="text-4xl font-black text-white">$2,499</span>
+            <span class="text-xs text-slate-500">/ sprint</span>
+          </div>
+          <p class="text-xs text-slate-400">Done-for-you technical & citation remediation package.</p>
+        </div>
+        <ul class="space-y-3 text-xs text-slate-300">
+          <li class="flex items-center space-x-2"><i class="fa-solid fa-check text-emerald-400 text-xs"></i> <span>Unlimited client audits</span></li>
+          <li class="flex items-center space-x-2"><i class="fa-solid fa-check text-emerald-400 text-xs"></i> <span>Full white-label branding</span></li>
+          <li class="flex items-center space-x-2"><i class="fa-solid fa-check text-emerald-400 text-xs"></i> <span>Wikidata entity creation</span></li>
+          <li class="flex items-center space-x-2"><i class="fa-solid fa-check text-emerald-400 text-xs"></i> <span>Turnkey GTM Outreach Playbooks</span></li>
+          <li class="flex items-center space-x-2"><i class="fa-solid fa-check text-emerald-400 text-xs"></i> <span>Direct Slack engineer advisory</span></li>
+        </ul>
+        <a href="/gtm-kit" class="block w-full py-3 rounded-xl border border-slate-700 bg-slate-800 hover:bg-slate-700 text-center text-xs font-bold text-white transition">
+          View Agency Kit
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-slate-800 bg-[#05080f] py-16 px-6 text-xs text-slate-400">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-5 gap-10">
+      
+      <div class="md:col-span-2 space-y-4">
+        <div class="flex items-center space-x-3">
+          <div class="w-8 h-8 rounded-xl bg-indigo-500 flex items-center justify-center text-white">
+            <i class="fa-solid fa-brain text-sm"></i>
+          </div>
+          <span class="font-extrabold text-lg text-white">Omni<span class="text-indigo-400">GEO</span></span>
+        </div>
+        <p class="text-slate-400 text-xs max-w-sm leading-relaxed">
+          The enterprise standard for Generative Engine Optimization. Enabling modern companies to claim AI recommendation consensus across ChatGPT, Perplexity, Claude, and Gemini.
+        </p>
+        <div class="text-[11px] text-slate-500">
+          &copy; 2026 OmniGEO Inc. All rights reserved. Built for the Post-Search Era.
+        </div>
+      </div>
+
+      <div>
+        <h4 class="font-bold text-white uppercase tracking-wider mb-3">Platform</h4>
+        <ul class="space-y-2">
+          <li><a href="#scanner" class="hover:text-white transition">Instant Audit</a></li>
+          <li><a href="/dashboard" class="hover:text-white transition">Workspace</a></li>
+          <li><a href="#simulator" class="hover:text-white transition">LLM Consensus</a></li>
+          <li><a href="/pricing" class="hover:text-white transition">Pricing Plans</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="font-bold text-white uppercase tracking-wider mb-3">Free Tools</h4>
+        <ul class="space-y-2">
+          <li><a href="/tools/llms-txt-generator" class="hover:text-white transition">/llms.txt Builder</a></li>
+          <li><a href="/tools/robots-txt-tester" class="hover:text-white transition">AI Bot Tester</a></li>
+          <li><a href="#roi-calculator" class="hover:text-white transition">Pipeline Calculator</a></li>
+          <li><a href="/report/audit_linear_sample" class="hover:text-white transition">Benchmark Demo</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="font-bold text-white uppercase tracking-wider mb-3">Agency & GTM</h4>
+        <ul class="space-y-2">
+          <li><a href="/gtm-kit" class="hover:text-white transition">3-Min Loom Script</a></li>
+          <li><a href="/gtm-kit" class="hover:text-white transition">Proposal Template</a></li>
+          <li><a href="/gtm-kit" class="hover:text-white transition">SOW Agreement</a></li>
+          <li><a href="/gtm-kit" class="hover:text-white transition">30-Day Manual</a></li>
+        </ul>
+      </div>
+
+    </div>
+  </footer>
+
+  <script src="/static/app.js"></script>
+  <script>
+    function updateRoiCalc() {
+      const acv = parseInt(document.getElementById("acvSlider").value);
+      const prompts = parseInt(document.getElementById("promptsSlider").value);
+      const leakage = parseInt(document.getElementById("leakageSlider").value) / 100.0;
+
+      document.getElementById("acvLabel").innerText = "$" + acv.toLocaleString();
+      document.getElementById("promptsLabel").innerText = prompts.toLocaleString();
+      document.getElementById("leakageLabel").innerText = Math.round(leakage * 100) + "%";
+
+      // 3.5% conversion rate from high-intent commercial prompts to buyer shortlist
+      const lostLeadsMonthly = Math.round(prompts * leakage * 0.036);
+      // Assume 15% close rate on shortlisted leads
+      const lostRevenueAnnual = Math.round(lostLeadsMonthly * 0.15 * acv * 12);
+
+      document.getElementById("pipelineRiskDisplay").innerText = "$" + lostRevenueAnnual.toLocaleString();
+      document.getElementById("lostLeadsDisplay").innerText = lostLeadsMonthly;
+    }
+  </script>
+</body>
+</html>
